@@ -8,6 +8,7 @@ import { SobreNosotrosComponent } from './sobre-nosotros/sobre-nosotros.componen
 
 const routes: Routes = [
   { path: 'inicio', component: InicioComponent },
+  { path: '', component: InicioComponent },
   { path: 'carrito', component: CarritoComponent },
   { path: 'contacto', component: ContactoComponent },
   { path: 'productos', component: ProductosComponent },
