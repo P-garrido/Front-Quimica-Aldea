@@ -23,8 +23,6 @@ export class ProductsService {
   addToCart(prod: Product) {
     const orProd = new OrderProduct(prod, 1);
     this.cart.push(orProd);
-    console.log(prod);
-    console.log(this.cart);
   }
 
 

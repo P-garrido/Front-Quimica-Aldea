@@ -5,6 +5,8 @@ import { CarritoComponent } from './carrito/carrito.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { ProductosComponent } from './productos/productos.component';
 import { SobreNosotrosComponent } from './sobre-nosotros/sobre-nosotros.component';
+import { LoginComponent } from './login/login.component';
+import { RegistrarComponent } from './registrar/registrar.component';
 
 const routes: Routes = [
   { path: 'inicio', component: InicioComponent },
@@ -13,6 +15,8 @@ const routes: Routes = [
   { path: 'contacto', component: ContactoComponent },
   { path: 'productos', component: ProductosComponent },
   { path: 'sobrenosotros', component: SobreNosotrosComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'registrarse', component: RegistrarComponent },
 ];
 
 @NgModule({

@@ -7,11 +7,15 @@
         <h5 class="card-title">{{ordProd.prod.nameProd}}</h5>
         <p class="card-text">{{ordProd.prod.description}}</p>
         <p class="card-text"><b>${{ordProd.prod.price}}</b></p>
-        <button class="btn btn-secondary" (click)="addAmmount(ordProd)">+1</button>
-        <p>{{ordProd.quantity}}</p>
-        <button class="btn btn-secondary" (click)="subAmmount(ordProd)">-1</button>
+        <div class="quantity-container">
+          <button class="btn btn-secondary" (click)="subAmmount(ordProd)">-1</button>
+          <p class="display-6 text-center">{{ordProd.quantity}}</p>
+          <button class="btn btn-secondary" (click)="addAmmount(ordProd)">+1</button>
+        </div>
       </div>
     </div>
 
   </div>
+  <h2>TOTAL: ${{total}}</h2>
+  <button class="btn btn-primary">COMPRAR</button>
 </div>

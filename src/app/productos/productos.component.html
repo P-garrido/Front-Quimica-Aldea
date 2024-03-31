@@ -1,4 +1,4 @@
-<div class="input-group mb-3">
+<div class="input-group mb-3 buscador">
   <input type="text" class="form-control" placeholder="Buscar Productos" aria-label="Buscar Productos"
     aria-describedby="basic-addon2">
   <div class="input-group-append">
@@ -17,7 +17,10 @@
         <h5 class="card-title">{{prod.nameProd}}</h5>
         <p class="card-text">{{prod.description}}</p>
         <p class="card-text"><b>${{prod.price}}</b></p>
-        <a class="btn btn-primary" (click)="this.addToCart(prod)">Agregar al carrito</a>
+        <button type="button" class="btn btn-primary" (click)="this.addToCart(prod)" data-bs-container="body"
+          data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Agregado">Agregar al carrito</button>
+
+
       </div>
     </div>
 

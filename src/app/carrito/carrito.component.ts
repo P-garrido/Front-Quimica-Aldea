@@ -11,7 +11,10 @@ export class CarritoComponent {
 
   constructor(private service: ProductsService) {
     this.getCart();
+    this.getTotal();
   }
+
+  total: number = 0;
 
   cart: Array<OrderProduct> = [];
 
@@ -20,7 +23,8 @@ export class CarritoComponent {
   }
 
   addAmmount(ordProd: OrderProduct) {
-    ordProd.quantity++
+    ordProd.quantity++;
+    this.getTotal();
   }
 
   subAmmount(ordProd: OrderProduct) {
@@ -31,6 +35,15 @@ export class CarritoComponent {
       this.service.removeProduct(ordProd);
       this.getCart();
     }
+    this.getTotal();
+  }
+
+  getTotal() {
+    let tot = 0;
+    this.cart.forEach((op: OrderProduct) => {
+      tot += op.prod.price * op.quantity;
+    });
+    this.total = tot;
   }
 
 }

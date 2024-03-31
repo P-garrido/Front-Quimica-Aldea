@@ -1,0 +1,14 @@
+.products-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.buscador {
+  margin-top: 1rem;
+  padding: .5rem;
+
+  input {
+    margin-right: .5rem;
+  }
+}

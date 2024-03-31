@@ -11,6 +11,9 @@ import { ContactoComponent } from './contacto/contacto.component';
 import { CarritoComponent } from './carrito/carrito.component';
 import { FooterComponent } from './footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './login/login.component';
+import { RegistrarComponent } from './registrar/registrar.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,12 +24,15 @@ import { HttpClientModule } from '@angular/common/http';
     SobreNosotrosComponent,
     ContactoComponent,
     CarritoComponent,
-    FooterComponent
+    FooterComponent,
+    LoginComponent,
+    RegistrarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
 
   ],
   providers: [],
