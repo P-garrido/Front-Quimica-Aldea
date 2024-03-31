@@ -3,8 +3,8 @@
 
 
 <form class="form" [formGroup]="loginForm" (ngSubmit)="getOneUser()">
-  <input type="text" placeholder="Usuario" class="form-input" />
-  <input type="password" placeholder="Contraseña" class="form-input" />
+  <input type="text" placeholder="Usuario" class="form-input" formControlName="username" />
+  <input type="password" placeholder="Contraseña" class="form-input" formControlName="password" />
 
   <button type="submit" class="btn"><b>INICIAR SESIÓN</b></button>
 

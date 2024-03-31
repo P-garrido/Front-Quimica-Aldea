@@ -2,6 +2,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { User } from './models/user';
 import { catchError, throwError } from 'rxjs';
+import { FormGroup } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root'
@@ -22,7 +23,19 @@ export class LoginService {
 
 
   login(username: string, password: string) {
-    return this.http.post<any>(this.baseUrl, { username, password }).pipe(catchError(this.handleError));
+    let url = `${this.baseUrl}/login`;
+    return this.http.post<any>(url, { username, password }).pipe(catchError(this.handleError));
+  }
+
+  register(fg: FormGroup) {
+    return this.http.post<any>(this.baseUrl, {
+      username: fg.value.username,
+      password: fg.value.password,
+      adress: fg.value.adress,
+      phone: fg.value.phone,
+      mail: fg.value.mail,
+      type: 0
+    })
   }
 
 

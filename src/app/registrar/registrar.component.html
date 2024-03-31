@@ -1,1 +1,48 @@
-<p>registrar works!</p>
+<h2 class="text-center display-2">REGISTRAR USUARIO</h2>
+<p class="text-center">Complete sus datos en el formulario</p>
+
+<form class="row g-3 needs-validation form" [formGroup]="registerForm" (ngSubmit)="register()">
+  <div class="col-md-4">
+    <input type="text" class="form-control" id="validationCustom01" placeholder="Nombre de Usuario"
+      formControlName="username">
+    <div class="invalid-feedback">
+      Por favor ingrese su nombre de usuario
+    </div>
+  </div>
+  <div class="col-md-4">
+    <input type="password" class="form-control" id="validationCustom02" placeholder="Contraseña"
+      formControlName="password">
+    <div class="invalid-feedback">
+      Por favor ingrese su contraseña
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="input-group has-validation">
+      <span class="input-group-text" id="inputGroupPrepend">@</span>
+      <input type="text" class="form-control" id="validationCustomUsername" placeholder="Correo Electrónico"
+        aria-describedby="inputGroupPrepend" formControlName="mail">
+      <div class="invalid-feedback">
+        Por favor ingrese su correo electrónico
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <input type="text" class="form-control" id="validationCustom03" placeholder="Dirección" formControlName="adress">
+    <div class="invalid-feedback">
+      Por favor ingrese su dirección
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <input type="text" class="form-control" id="validationCustom04" placeholder="Teléfono" formControlName="phone">
+    <div class="invalid-feedback">
+      Por favor ingrese su teléfono
+    </div>
+  </div>
+
+
+
+  <div class="col-12">
+    <button class="btn" type="submit"><b>REGISTRARSE</b></button>
+  </div>
+</form>
