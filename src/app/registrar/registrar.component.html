@@ -3,41 +3,27 @@
 
 <form class="row g-3 needs-validation form" [formGroup]="registerForm" (ngSubmit)="register()">
   <div class="col-md-4">
-    <input type="text" class="form-control" id="validationCustom01" placeholder="Nombre de Usuario"
-      formControlName="username">
-    <div class="invalid-feedback">
-      Por favor ingrese su nombre de usuario
-    </div>
+    <input type="text" class="form-control" placeholder="Nombre de Usuario" formControlName="username">
   </div>
+
   <div class="col-md-4">
-    <input type="password" class="form-control" id="validationCustom02" placeholder="Contraseña"
-      formControlName="password">
-    <div class="invalid-feedback">
-      Por favor ingrese su contraseña
-    </div>
+    <input type="password" class="form-control" placeholder="Contraseña" formControlName="password">
   </div>
+
   <div class="col-md-4">
     <div class="input-group has-validation">
       <span class="input-group-text" id="inputGroupPrepend">@</span>
-      <input type="text" class="form-control" id="validationCustomUsername" placeholder="Correo Electrónico"
-        aria-describedby="inputGroupPrepend" formControlName="mail">
-      <div class="invalid-feedback">
-        Por favor ingrese su correo electrónico
-      </div>
+      <input type="text" class="form-control" placeholder="Correo Electrónico" aria-describedby="inputGroupPrepend"
+        formControlName="mail">
     </div>
+
   </div>
   <div class="col-md-6">
-    <input type="text" class="form-control" id="validationCustom03" placeholder="Dirección" formControlName="adress">
-    <div class="invalid-feedback">
-      Por favor ingrese su dirección
-    </div>
+    <input type="text" class="form-control" placeholder="Dirección" formControlName="adress">
   </div>
 
   <div class="col-md-6">
-    <input type="text" class="form-control" id="validationCustom04" placeholder="Teléfono" formControlName="phone">
-    <div class="invalid-feedback">
-      Por favor ingrese su teléfono
-    </div>
+    <input type="text" class="form-control" placeholder="Teléfono" formControlName="phone">
   </div>
 
 

@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { RegistrarComponent } from './registrar/registrar.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AgregarProductoComponent } from './agregar-producto/agregar-producto.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     CarritoComponent,
     FooterComponent,
     LoginComponent,
-    RegistrarComponent
+    RegistrarComponent,
+    AgregarProductoComponent
   ],
   imports: [
     BrowserModule,

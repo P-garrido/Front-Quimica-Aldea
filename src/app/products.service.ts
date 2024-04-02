@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Product } from './models/product';
 import { OrderProduct } from './models/order-product';
+import { FormGroup } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root'
@@ -31,5 +32,15 @@ export class ProductsService {
     if (index != -1) {
       this.cart.splice(index, 1)
     }
+  }
+
+
+  addProduct(fc: FormGroup) {
+    return this.http.post<Product>(this.baseUrl, {
+      nameProd: fc.value.nameProd,
+      file: fc.value.img,
+      description: fc.value.desc,
+      price: fc.value.price
+    })
   }
 }

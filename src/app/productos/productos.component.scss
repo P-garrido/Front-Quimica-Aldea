@@ -6,9 +6,21 @@
 
 .buscador {
   margin-top: 1rem;
-  padding: .5rem;
+  width: 90vw;
+  margin: auto;
 
   input {
     margin-right: .5rem;
   }
+}
+
+.btn {
+  background-color: #000;
+  color: #fff;
+}
+
+.btn-agregar {
+  display: block;
+  width: 90vw;
+  margin: auto;
 }
