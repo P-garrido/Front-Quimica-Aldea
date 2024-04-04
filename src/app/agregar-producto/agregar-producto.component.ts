@@ -15,26 +15,24 @@ export class AgregarProductoComponent {
 
   newProductForm = new FormGroup({
     nameProd: new FormControl('', Validators.required),
-    img: new FormControl('', Validators.required),
+    file: new FormControl('', Validators.required),
     desc: new FormControl(''),
     price: new FormControl('', [Validators.required, Validators.min(0)]),
   })
 
-  // FALTA VER COMO SUBIR IMAGEM
   addProduct(fi: HTMLInputElement) {
     console.log(this.newProductForm)
     const formData = new FormData();
-    let file = fi.files![0];
-    formData.append('file', file);
-    console.log(file)
-    console.log(formData)
+    formData.append('file', fi.files![0]);
+    formData.append('nameProd', this.newProductForm.value.nameProd!);
+    formData.append('description', this.newProductForm.value.desc ? this.newProductForm.value.desc : "");
+    formData.append('price', this.newProductForm.value.price!);
 
-    // this.service.addProduct(this.newProductForm).subscribe(res => {
-    //   if (res) {
-    //     console.log(res)
-    //     this.router.navigate(['productos']);
-    //   }
-    // })
+    this.service.addProduct(formData).subscribe(res => {
+      if (res) {
+        this.router.navigate(['productos']);
+      }
+    })
   }
 
 }

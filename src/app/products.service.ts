@@ -35,12 +35,7 @@ export class ProductsService {
   }
 
 
-  addProduct(fc: FormGroup) {
-    return this.http.post<Product>(this.baseUrl, {
-      nameProd: fc.value.nameProd,
-      file: fc.value.img,
-      description: fc.value.desc,
-      price: fc.value.price
-    })
+  addProduct(fd: FormData) {
+    return this.http.post<Product>(this.baseUrl, fd)
   }
 }
