@@ -2,7 +2,7 @@
   <input type="text" class="form-control" placeholder="Buscar Productos" aria-label="Buscar Productos"
     aria-describedby="basic-addon2">
   <div class="input-group-append">
-    <button class="btn btn-outline-secondary" type="button">Buscar</button>
+    <button class="btn btn-outline-secondary" type="button"><b>Buscar</b></button>
   </div>
 </div>
 
@@ -19,8 +19,9 @@
         <h5 class="card-title">{{prod.nameProd}}</h5>
         <p class="card-text">{{prod.description}}</p>
         <p class="card-text"><b>${{prod.price}}</b></p>
-        <button type="button" class="btn btn-primary" (click)="this.addToCart(prod)" data-bs-container="body"
-          data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Agregado">Agregar al carrito</button>
+        <button class="btn btn-editar"><b>EDITAR</b></button>
+        <button class="btn btn-eliminar"><b>ELIMINAR</b></button>
+        <button class="btn" (click)="this.addToCart(prod)"><b>AGREGAR AL CARRITO</b></button>
 
 
       </div>

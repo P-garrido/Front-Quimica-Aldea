@@ -20,6 +20,12 @@ export class ProductsService {
   }
 
 
+  deleteProduct(prod: Product) {
+    const url = `${this.baseUrl}/${prod.id}`
+    return this.http.delete<any>(url)
+  }
+
+
 
   addToCart(prod: Product) {
     const orProd = new OrderProduct(prod, 1);
