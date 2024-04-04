@@ -22,7 +22,7 @@ export class ProductosComponent {
     this.products.splice(0, this.products.length);
     this.service.getAll().subscribe(response => {
       response.forEach((prod: any) => {
-        this.products.push(new Product(prod.id, prod.nameProd, prod.urlImg, prod.description, prod.price))
+        this.products.push(new Product(prod.idProd, prod.nameProd, prod.urlImg, prod.description, prod.price))
       })
     })
   }

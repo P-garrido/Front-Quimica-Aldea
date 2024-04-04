@@ -20,7 +20,7 @@
         <p class="card-text">{{prod.description}}</p>
         <p class="card-text"><b>${{prod.price}}</b></p>
         <button class="btn btn-editar"><b>EDITAR</b></button>
-        <button class="btn btn-eliminar"><b>ELIMINAR</b></button>
+        <button class="btn btn-eliminar" (click)="deleteProduct(prod)"><b>ELIMINAR</b></button>
         <button class="btn" (click)="this.addToCart(prod)"><b>AGREGAR AL CARRITO</b></button>
 
 
