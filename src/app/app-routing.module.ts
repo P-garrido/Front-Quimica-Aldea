@@ -8,6 +8,7 @@ import { SobreNosotrosComponent } from './sobre-nosotros/sobre-nosotros.componen
 import { LoginComponent } from './login/login.component';
 import { RegistrarComponent } from './registrar/registrar.component';
 import { AgregarProductoComponent } from './agregar-producto/agregar-producto.component';
+import { AdminProductosComponent } from './admin-productos/admin-productos.component';
 
 const routes: Routes = [
   { path: 'inicio', component: InicioComponent },
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'registrarse', component: RegistrarComponent },
   { path: 'agregarProducto', component: AgregarProductoComponent },
+  { path: 'adminProductos', component: AdminProductosComponent },
 ];
 
 @NgModule({

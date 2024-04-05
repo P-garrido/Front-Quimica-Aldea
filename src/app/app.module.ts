@@ -15,6 +15,7 @@ import { LoginComponent } from './login/login.component';
 import { RegistrarComponent } from './registrar/registrar.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AgregarProductoComponent } from './agregar-producto/agregar-producto.component';
+import { AdminProductosComponent } from './admin-productos/admin-productos.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { AgregarProductoComponent } from './agregar-producto/agregar-producto.co
     FooterComponent,
     LoginComponent,
     RegistrarComponent,
-    AgregarProductoComponent
+    AgregarProductoComponent,
+    AdminProductosComponent
   ],
   imports: [
     BrowserModule,

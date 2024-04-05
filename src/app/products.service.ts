@@ -15,6 +15,8 @@ export class ProductsService {
   baseUrl = 'http://localhost:3000/products';
   cart: Array<OrderProduct> = [];
 
+  productToEdit: Product | null = null;
+
   getAll() {
     return this.http.get<Product[]>(this.baseUrl);
   }
@@ -44,4 +46,7 @@ export class ProductsService {
   addProduct(fd: FormData) {
     return this.http.post<Product>(this.baseUrl, fd)
   }
+
+
+
 }

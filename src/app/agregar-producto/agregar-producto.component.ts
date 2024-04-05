@@ -10,7 +10,22 @@ import { Router } from '@angular/router';
 })
 export class AgregarProductoComponent {
 
-  constructor(private service: ProductsService, private router: Router) { }
+  constructor(private service: ProductsService, private router: Router) {
+    if (service.productToEdit != null) {
+      this.onEdit = true;
+      this.newProductForm.controls.nameProd.patchValue(service.productToEdit.nameProd);
+      this.newProductForm.controls.desc.patchValue(service.productToEdit.description);
+      this.newProductForm.controls.price.patchValue(service.productToEdit.price.toString());
+    }
+    else {
+      this.onEdit = false;
+      this.newProductForm.controls.nameProd.reset();
+      this.newProductForm.controls.desc.reset();
+      this.newProductForm.controls.price.reset();
+    }
+  }
+
+  onEdit: boolean = false;
 
 
   newProductForm = new FormGroup({
@@ -21,7 +36,6 @@ export class AgregarProductoComponent {
   })
 
   addProduct(fi: HTMLInputElement) {
-    console.log(this.newProductForm)
     const formData = new FormData();
     formData.append('file', fi.files![0]);
     formData.append('nameProd', this.newProductForm.value.nameProd!);

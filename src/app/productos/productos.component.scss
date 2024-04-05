@@ -3,6 +3,7 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+  margin-top: 2rem;
 }
 
 .buscador {
@@ -24,17 +25,15 @@
   margin-top: .5rem;
 }
 
-.btn-editar {
-  background-color: #999;
-}
 
-.btn-eliminar {
-  background-color: #f00;
-}
-
-.btn-agregar {
+.btn-administrar {
   display: block;
   width: 90vw;
   margin: auto;
-  margin-bottom: 1rem;
+}
+
+
+.btn-agregar {
+  margin: auto;
+  width: 90%;
 }

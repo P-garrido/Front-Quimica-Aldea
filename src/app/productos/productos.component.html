@@ -6,7 +6,7 @@
   </div>
 </div>
 
-<button class="btn btn-agregar" routerLink="/agregarProducto"><b>Agregar Productos</b></button>
+<button class="btn btn-administrar" routerLink="/adminProductos"><b>Administrar Productos</b></button>
 
 
 
@@ -14,16 +14,12 @@
   <div class="products" *ngFor="let prod of products">
 
     <div class="card" style="width: 18rem;">
-      <img src="{{prod.urlImg}}" class="card-img-top" alt="...">
+      <img src="{{prod.urlImg}}" class="card-img-top" alt="{{prod.nameProd}}">
       <div class="card-body">
         <h5 class="card-title">{{prod.nameProd}}</h5>
         <p class="card-text">{{prod.description}}</p>
         <p class="card-text"><b>${{prod.price}}</b></p>
-        <button class="btn btn-editar"><b>EDITAR</b></button>
-        <button class="btn btn-eliminar" (click)="deleteProduct(prod)"><b>ELIMINAR</b></button>
-        <button class="btn" (click)="this.addToCart(prod)"><b>AGREGAR AL CARRITO</b></button>
-
-
+        <button class="btn btn-agregar" (click)="this.addToCart(prod)"><b>AGREGAR AL CARRITO</b></button>
       </div>
     </div>
 

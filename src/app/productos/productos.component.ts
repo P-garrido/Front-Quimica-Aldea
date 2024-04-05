@@ -31,13 +31,8 @@ export class ProductosComponent {
     this.service.addToCart(prod);
   }
 
-  deleteProduct(prod: Product) {
-    this.service.deleteProduct(prod).subscribe(res => {
-      console.log(res);
-      if (res.status != 500) {
-        this.getAllProducts()
-      }
-    })
-  }
+
+
+
 
 }
