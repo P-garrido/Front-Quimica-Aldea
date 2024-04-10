@@ -1,8 +1,8 @@
 <div class="input-group mb-3 buscador">
   <input type="text" class="form-control" placeholder="Buscar Productos" aria-label="Buscar Productos"
-    aria-describedby="basic-addon2">
+    aria-describedby="basic-addon2" #searchBox>
   <div class="input-group-append">
-    <button class="btn btn-outline-secondary" type="button"><b>Buscar</b></button>
+    <button class="btn btn-outline-secondary" type="button" (click)="searchProd(searchBox)"><b>Buscar</b></button>
   </div>
 </div>
 

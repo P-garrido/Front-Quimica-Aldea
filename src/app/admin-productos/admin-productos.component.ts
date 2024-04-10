@@ -11,6 +11,7 @@ export class AdminProductosComponent {
 
   constructor(private service: ProductsService) {
     this.getAllProducts();
+    service.productToEdit = null;
   }
 
 

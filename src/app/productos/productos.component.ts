@@ -29,8 +29,18 @@ export class ProductosComponent {
 
   addToCart(prod: Product) {
     this.service.addToCart(prod);
+    this.service.setCartData();
   }
 
+
+  searchProd(sb: HTMLInputElement) {
+    this.products.splice(0, this.products.length);
+    this.service.filter(sb.value).subscribe(res => {
+      res.forEach((prod: any) => {
+        this.products.push(new Product(prod.idProd, prod.nameProd, prod.urlImg, prod.description, prod.price))
+      })
+    })
+  }
 
 
 

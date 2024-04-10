@@ -9,13 +9,24 @@ import { FormGroup } from '@angular/forms';
 })
 export class ProductsService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    const storedData = sessionStorage.getItem(this.cartKey);
+    this.cart = storedData ? JSON.parse(storedData).cart : []
+  }
 
 
   baseUrl = 'http://localhost:3000/products';
   cart: Array<OrderProduct> = [];
 
   productToEdit: Product | null = null;
+
+  cartKey = 'cart';
+
+
+  setCartData() {
+    // Almacenar datos en el almacenamiento local
+    sessionStorage.setItem(this.cartKey, JSON.stringify({ cart: this.cart }));
+  }
 
   getAll() {
     return this.http.get<Product[]>(this.baseUrl);
@@ -39,6 +50,7 @@ export class ProductsService {
     let index = this.cart.indexOf(ordProd);
     if (index != -1) {
       this.cart.splice(index, 1)
+      this.setCartData()
     }
   }
 
@@ -50,8 +62,18 @@ export class ProductsService {
 
   editProduct(fd: FormData) {
     const url = `${this.baseUrl}/${this.productToEdit!.id}`
+    this.productToEdit = null;
     return this.http.patch(url, fd)
   }
+
+
+  filter(filter: string) {
+    const url = `${this.baseUrl}/${filter}`;
+    return this.http.get<Product[]>(url);
+  }
+
+
+
 
 
 
