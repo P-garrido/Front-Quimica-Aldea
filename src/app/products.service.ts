@@ -48,5 +48,11 @@ export class ProductsService {
   }
 
 
+  editProduct(fd: FormData) {
+    const url = `${this.baseUrl}/${this.productToEdit!.id}`
+    return this.http.patch(url, fd)
+  }
+
+
 
 }

@@ -37,16 +37,27 @@ export class AgregarProductoComponent {
 
   addProduct(fi: HTMLInputElement) {
     const formData = new FormData();
-    formData.append('file', fi.files![0]);
     formData.append('nameProd', this.newProductForm.value.nameProd!);
     formData.append('description', this.newProductForm.value.desc ? this.newProductForm.value.desc : "");
     formData.append('price', this.newProductForm.value.price!);
-
-    this.service.addProduct(formData).subscribe(res => {
-      if (res) {
-        this.router.navigate(['productos']);
+    if (this.onEdit == false) {
+      formData.append('file', fi.files![0]);
+      this.service.addProduct(formData).subscribe(res => {
+        if (res) {
+          this.router.navigate(['productos']);
+        }
+      })
+    }
+    else {
+      if (fi.files![0] != undefined) {
+        formData.append('file', fi.files![0]);
       }
-    })
+      this.service.editProduct(formData).subscribe(res => {
+        if (res) {
+          this.router.navigate(['productos']);
+        }
+      })
+    }
   }
 
 }
