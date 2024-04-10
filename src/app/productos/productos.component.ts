@@ -29,7 +29,6 @@ export class ProductosComponent {
 
   addToCart(prod: Product) {
     this.service.addToCart(prod);
-    this.service.setCartData();
   }
 
 

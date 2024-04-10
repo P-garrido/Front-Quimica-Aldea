@@ -1,3 +1,7 @@
+<h2 class="text-center display-2">CARRITO</h2>
+<p class="text-center">Revise los productos agregados y realize el checkout</p>
+
+
 <div class="cart-container">
   <div class="cart" *ngFor="let ordProd of this.cart">
 
@@ -14,8 +18,8 @@
         </div>
       </div>
     </div>
-
+    <hr>
   </div>
   <h2>TOTAL: ${{total}}</h2>
-  <button class="btn btn-primary">COMPRAR</button>
+  <button class=" btn btn-checkout"><b>COMPRAR</b></button>
 </div>

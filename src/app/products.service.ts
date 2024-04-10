@@ -43,6 +43,7 @@ export class ProductsService {
   addToCart(prod: Product) {
     const orProd = new OrderProduct(prod, 1);
     this.cart.push(orProd);
+    this.setCartData();
   }
 
 

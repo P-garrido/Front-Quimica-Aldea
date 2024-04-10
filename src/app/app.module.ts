@@ -16,6 +16,7 @@ import { RegistrarComponent } from './registrar/registrar.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AgregarProductoComponent } from './agregar-producto/agregar-producto.component';
 import { AdminProductosComponent } from './admin-productos/admin-productos.component';
+import { PedidosComponent } from './pedidos/pedidos.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { AdminProductosComponent } from './admin-productos/admin-productos.compo
     LoginComponent,
     RegistrarComponent,
     AgregarProductoComponent,
-    AdminProductosComponent
+    AdminProductosComponent,
+    PedidosComponent
   ],
   imports: [
     BrowserModule,
