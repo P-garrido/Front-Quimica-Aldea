@@ -1,3 +1,7 @@
+<h2 class="text-center display-2">PRODUCTOS</h2>
+<p class="text-center">Agregue los productos al carrito</p>
+
+
 <div class="input-group mb-3 buscador">
   <input type="text" class="form-control" placeholder="Buscar Productos" aria-label="Buscar Productos"
     aria-describedby="basic-addon2" #searchBox>
@@ -13,8 +17,8 @@
 <div class="products-container">
   <div class="products" *ngFor="let prod of products">
 
-    <div class="card" style="width: 18rem;">
-      <img src="{{prod.urlImg}}" class="card-img-top" alt="{{prod.nameProd}}">
+    <div class="card">
+      <img src="{{prod.urlImg}}" class="card-img-top object-fit-scale" alt="{{prod.nameProd}}">
       <div class="card-body">
         <h5 class="card-title">{{prod.nameProd}}</h5>
         <p class="card-text">{{prod.description}}</p>

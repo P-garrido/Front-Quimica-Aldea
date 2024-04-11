@@ -1,1 +1,27 @@
-<p>usuarios works!</p>
+<h2 class="text-center display-2">USUARIOS</h2>
+<p class="text-center">Panel para consultar usuarios</p>
+
+<div class="accordion pedidos-container">
+  <div class="accordion-item pedidos" *ngFor="let usuario of usuarios; let i=index">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+        [attr.data-bs-target]="'#collapse' + i" aria-expanded="false" [attr.aria-controls]="'collapse' + i">
+        Usuario: {{usuario.username}}
+      </button>
+    </h2>
+    <div [id]="'collapse' + i" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <b>Dirección: </b>{{usuario.address}}<br>
+        <b>Mail: </b>{{usuario.mail}}<br>
+        <b>Teléfono: </b>{{usuario.phone}}<br>
+        <b>Tipo: </b>{{usuario.type==0?'Admin':'Cliente'}}<br>
+
+
+        <button class="btn" (click)="changeType(usuario)"><b>{{usuario.type==1?'Dar admin' : 'Quitar
+            admin'}}</b></button>
+        <button class="btn btn-eliminar" (click)="deleteUser(usuario)"><b>Eliminar</b></button>
+      </div>
+    </div>
+  </div>
+
+</div>

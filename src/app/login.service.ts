@@ -34,7 +34,7 @@ export class LoginService {
       adress: fg.value.adress,
       phone: fg.value.phone,
       mail: fg.value.mail,
-      type: 0
+      type: 1
     })
   }
 
