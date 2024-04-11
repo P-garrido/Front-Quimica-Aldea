@@ -10,6 +10,7 @@ import { RegistrarComponent } from './registrar/registrar.component';
 import { AgregarProductoComponent } from './agregar-producto/agregar-producto.component';
 import { AdminProductosComponent } from './admin-productos/admin-productos.component';
 import { PedidosComponent } from './pedidos/pedidos.component';
+import { UsuariosComponent } from './usuarios/usuarios.component';
 
 const routes: Routes = [
   { path: 'inicio', component: InicioComponent },
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'agregarProducto', component: AgregarProductoComponent },
   { path: 'adminProductos', component: AdminProductosComponent },
   { path: 'pedidos', component: PedidosComponent },
+  { path: 'usuarios', component: UsuariosComponent },
 ];
 
 @NgModule({

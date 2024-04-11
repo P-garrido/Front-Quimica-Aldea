@@ -17,6 +17,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AgregarProductoComponent } from './agregar-producto/agregar-producto.component';
 import { AdminProductosComponent } from './admin-productos/admin-productos.component';
 import { PedidosComponent } from './pedidos/pedidos.component';
+import { UsuariosComponent } from './usuarios/usuarios.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { PedidosComponent } from './pedidos/pedidos.component';
     RegistrarComponent,
     AgregarProductoComponent,
     AdminProductosComponent,
-    PedidosComponent
+    PedidosComponent,
+    UsuariosComponent
   ],
   imports: [
     BrowserModule,
