@@ -1,1 +1,49 @@
-<p>pedidos works!</p>
+<h2 class="text-center display-2">PEDIDOS</h2>
+<p class="text-center">Panel para consultar pedidos pendientes o realizados</p>
+
+<div class="accordion pedidos-container">
+  <div class="accordion-item pedidos" *ngFor="let pedido of pedidos; let i=index">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+        [attr.data-bs-target]="'#collapse' + i" aria-expanded="false" [attr.aria-controls]="'collapse' + i"
+        [ngClass]="{'delivered':pedido.delivered, 'not-delivered':!pedido.delivered}">
+        Pedido nro {{pedido.id}}
+      </button>
+    </h2>
+    <div [id]="'collapse' + i" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        Fecha de realización: <strong>{{pedido.date | date: 'dd/MM/yyy HH:mm'}}</strong>
+        <p *ngIf="pedido.user">
+          <b>Nombre de Usuario:</b> {{pedido.user.username}}<br>
+          <b>Dirección:</b> {{pedido.user.address}}<br>
+          <b>Mail:</b> {{pedido.user.mail}}<br>
+          <b>Teléfono:</b> {{pedido.user.phone}}
+        </p>
+
+        <p *ngIf="!pedido.user">
+          <b>Nombre:</b> {{pedido.name}} <br>
+          <b>Dirección:</b> {{pedido.address}}<br>
+          <b>Teléfono:</b> {{pedido.phone}}<br>
+          <b>Mail:</b> {{pedido.mail}}
+        </p>
+        <b>Entregado:</b> {{pedido.delivered? 'Si' : 'No'}}<br>
+
+        <b>Productos:</b>
+        <ul>
+          <li *ngFor="let op of pedido.orderProducts">
+            {{op.prod.nameProd}} x{{op.quantity}}
+          </li>
+        </ul>
+
+
+        TOTAL: <b>${{pedido.ammount}}</b>
+
+        <button class="btn" (click)="changeStatus(pedido)"><b>{{pedido.delivered?'Marcar como no entregado' : 'Marcar
+            como
+            entregado'}}</b></button>
+        <button class="btn btn-eliminar" (click)="deleteOrder(pedido)"><b>Eliminar</b></button>
+      </div>
+    </div>
+  </div>
+
+</div>
