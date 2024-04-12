@@ -21,5 +21,50 @@
     <hr>
   </div>
   <h2>TOTAL: ${{total}}</h2>
-  <button class=" btn btn-checkout"><b>COMPRAR</b></button>
+  <button class=" btn btn-checkout" (click)="checkout(template)"><b>COMPRAR</b></button>
 </div>
+
+
+
+
+<!-- MODAL PARA COMPRAS SIN USUARIO -->
+
+
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Modal</h4>
+    <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
+      <span aria-hidden="true" class="visually-hidden">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+
+    <form class="row g-3 needs-validation form" [formGroup]="noUserForm" (ngSubmit)="confirm()">
+      <div class="col-md-4">
+        <input type="text" class="form-control" placeholder="Nombre" formControlName="name">
+      </div>
+
+      <div class="col-md-4">
+        <div class="input-group has-validation">
+          <span class="input-group-text" id="inputGroupPrepend">@</span>
+          <input type="text" class="form-control" placeholder="Correo Electrónico" aria-describedby="inputGroupPrepend"
+            formControlName="mail">
+        </div>
+
+      </div>
+      <div class="col-md-6">
+        <input type="text" class="form-control" placeholder="Dirección" formControlName="address">
+      </div>
+
+      <div class="col-md-6">
+        <input type="text" class="form-control" placeholder="Teléfono" formControlName="phone">
+      </div>
+
+
+
+      <div class="col-12">
+        <button class="btn-modal" type="submit"><b>CONFIRMAR</b></button>
+      </div>
+    </form>
+  </div>
+</ng-template>

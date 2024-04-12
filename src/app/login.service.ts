@@ -18,8 +18,8 @@ export class LoginService {
   baseUrl = "http://localhost:3000/users";
   public sessionStorageKey = 'user_data';
 
-  user: User;
-  token: string;
+  user: User | null = null;
+  token: string | null = null;
 
 
   login(username: string, password: string) {

@@ -18,6 +18,7 @@ import { AgregarProductoComponent } from './agregar-producto/agregar-producto.co
 import { AdminProductosComponent } from './admin-productos/admin-productos.component';
 import { PedidosComponent } from './pedidos/pedidos.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 @NgModule({
   declarations: [
@@ -34,13 +35,14 @@ import { UsuariosComponent } from './usuarios/usuarios.component';
     AgregarProductoComponent,
     AdminProductosComponent,
     PedidosComponent,
-    UsuariosComponent
+    UsuariosComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ModalModule.forRoot()
 
   ],
   providers: [],

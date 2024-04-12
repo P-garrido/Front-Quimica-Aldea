@@ -2,8 +2,8 @@ import { OrderProduct } from "./order-product";
 import { User } from "./user";
 
 export class Order {
-  id: number;
-  date: Date;
+  id: number | null;
+  date: string;
   ammount: number;
   user: User | null;
   address: string | null;
@@ -13,7 +13,7 @@ export class Order {
   delivered: boolean;
   orderProducts: OrderProduct[];
 
-  constructor(id: number, date: Date, ammount: number, user: User | null, address: string | null, mail: string | null, phone: string | null, name: string | null, delivered: boolean, ordProd: OrderProduct[]) {
+  constructor(id: number | null, date: string, ammount: number, user: User | null, address: string | null, mail: string | null, phone: string | null, name: string | null, delivered: boolean, ordProd: OrderProduct[]) {
     this.id = id;
     this.date = date;
     this.ammount = ammount;
