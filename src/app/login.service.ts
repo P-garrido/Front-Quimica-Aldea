@@ -31,7 +31,7 @@ export class LoginService {
     return this.http.post<any>(this.baseUrl, {
       username: fg.value.username,
       password: fg.value.password,
-      adress: fg.value.adress,
+      address: fg.value.address,
       phone: fg.value.phone,
       mail: fg.value.mail,
       type: 1

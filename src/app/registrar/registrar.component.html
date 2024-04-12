@@ -1,5 +1,8 @@
-<h2 class="text-center display-2">REGISTRAR USUARIO</h2>
-<p class="text-center">Complete sus datos en el formulario</p>
+<h2 class="text-center display-2" *ngIf="service.user==null">REGISTRAR USUARIO</h2>
+<p class="text-center" *ngIf="service.user==null">Complete sus datos en el formulario</p>
+
+<h2 class="text-center display-2" *ngIf="service.user!=null">PERFIL</h2>
+<p class="text-center" *ngIf="service.user!=null">Información de su perfil</p>
 
 <form class="row g-3 needs-validation form" [formGroup]="registerForm" (ngSubmit)="register()">
   <div class="col-md-4">
@@ -19,7 +22,7 @@
 
   </div>
   <div class="col-md-6">
-    <input type="text" class="form-control" placeholder="Dirección" formControlName="adress">
+    <input type="text" class="form-control" placeholder="Dirección" formControlName="address">
   </div>
 
   <div class="col-md-6">

@@ -1,15 +1,16 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Product } from './models/product';
 import { OrderProduct } from './models/order-product';
 import { FormGroup } from '@angular/forms';
+import { LoginService } from './login.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductsService {
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private loginService: LoginService) {
     const storedData = sessionStorage.getItem(this.cartKey);
     this.cart = storedData ? JSON.parse(storedData).cart : []
   }
@@ -34,8 +35,10 @@ export class ProductsService {
 
 
   deleteProduct(prod: Product) {
+    const token = this.loginService.token;
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
     const url = `${this.baseUrl}/${prod.id}`
-    return this.http.delete<any>(url)
+    return this.http.delete<any>(url, { headers })
   }
 
 
@@ -57,14 +60,18 @@ export class ProductsService {
 
 
   addProduct(fd: FormData) {
-    return this.http.post<Product>(this.baseUrl, fd)
+    const token = this.loginService.token;
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    return this.http.post<Product>(this.baseUrl, fd, { headers })
   }
 
 
   editProduct(fd: FormData) {
+    const token = this.loginService.token;
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
     const url = `${this.baseUrl}/${this.productToEdit!.id}`
     this.productToEdit = null;
-    return this.http.patch(url, fd)
+    return this.http.patch(url, fd, { headers })
   }
 
 

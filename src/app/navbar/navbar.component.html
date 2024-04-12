@@ -23,15 +23,19 @@
           <a class="nav-link" routerLink="/carrito">Carrito</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/pedidos">Pedidos</a>
+          <a class="nav-link" routerLink="/pedidos" *ngIf="loginService.user?.type==0">Pedidos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/usuarios">Usuarios</a>
+          <a class="nav-link" routerLink="/usuarios" *ngIf="loginService.user?.type==0">Usuarios</a>
         </li>
         <hr>
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="loginService.user==null">
           <a class="nav-link" routerLink="/login">Iniciar Sesión</a>
         </li>
+        <li class="nav-item" *ngIf="loginService.user!=null">
+          <a class="nav-link" routerLink="/registrarse">Perfil</a>
+        </li>
+
       </ul>
     </div>
 

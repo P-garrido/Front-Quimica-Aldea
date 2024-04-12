@@ -1,14 +1,15 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Order } from './models/order';
 import { OrderProduct } from './models/order-product';
+import { LoginService } from './login.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PedidosService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private loginService: LoginService) { }
 
   baseUrl: string = 'http://localhost:3000/orders'
 
@@ -17,6 +18,8 @@ export class PedidosService {
   }
 
   changeStatus(ord: Order) {
+    const token = this.loginService.token;
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
     const url = `${this.baseUrl}/${ord.id}`;
     return this.http.patch(url, {
       date: ord.date,
@@ -26,13 +29,15 @@ export class PedidosService {
       phone: ord.phone,
       name: ord.name,
       delivered: !ord.delivered
-    })
+    }, { headers })
   }
 
 
   deleteOrder(ord: Order) {
+    const token = this.loginService.token;
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
     const url = `${this.baseUrl}/${ord.id}`;
-    return this.http.delete(url);
+    return this.http.delete(url, { headers });
   }
 
 
